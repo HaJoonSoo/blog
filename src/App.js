@@ -1,10 +1,13 @@
+/* eslint-disable */
+
 import React,{ useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
 
-  let [글제목, 글제목변경] = useState(['State  예제', 'State 예제 2']);
+  let [글제목, 글제목변경] = useState(['State  예제', 'State 과제']);
   // State는 변수대신 쓰는 데이터 저장공간
   // useState()를 이용해서 만들어야한다.
   // 문자, 숫자, Array, object 전부 사용 가능.
@@ -19,6 +22,13 @@ function App() {
   let posts = 'Joon Soo 의 리액트 맛보기';
   // posts라는 변수를 선언하기
 
+  function 제목바꾸기(){
+    var newArray = [...글제목];
+    newArray[0] = 'State 과제'
+    글제목변경( newArray );
+  }
+
+  let [하트, 하트변경] = useState(0);
 
   function 함수(){
     return 100
@@ -32,8 +42,11 @@ function App() {
                       fontSize : '30px'} }
                       >JoonSoo Blog</div>
       </div>
+
+    <button onClick={ 제목바꾸기 }>과제</button>
+
       <div className="list">
-        <h3> { 글제목[0] } </h3>
+        <h3> { 글제목[0] } <span onClick={ ()=>{ 하트변경(하트 + 1) } }>♥</span> {하트} </h3>
         <p>8월 18일 발행</p>
         <hr/>
       </div>
