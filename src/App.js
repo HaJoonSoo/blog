@@ -68,8 +68,35 @@ function App() {
         <p>8월 18일 연습</p>
         <hr/>
       </div>
+
+      <Modal/>
+
     </div>
   );
+}
+
+// Component 만드는 법
+// 1. 함수 만들고 이름 짓고
+// 2. 축약을 원하는 HTML넣고
+// 3. 원하는 곳에서 <함수명 />
+
+// Component 유의사항
+// 1. 이름은 대문자로 하고 이름은 대괄호로,
+// 2. return() 안에 있는것은 태그하나로 묶어야함
+// 3. return() 내부를 묶을때 의미없는 <div>를 쓰기 싫으면
+//    그냥 <> </>를 사용하면 된다.
+
+// Component 많이 만들면 생기는 단점
+// State() 문법을 쓸 때 많이 복잡해짐
+// 상위 Component에서 만든 State를 사용하러면 Props문법을 이용해야한다
+function Modal(){
+  return(
+    <div className="modal">
+        <h2>제목</h2>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
+  )
 }
 
 export default App;
